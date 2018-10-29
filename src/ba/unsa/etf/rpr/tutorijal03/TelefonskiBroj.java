@@ -2,10 +2,8 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 public abstract class TelefonskiBroj {
 
-    public abstract String ispisi(){
-    }
+    public abstract String ispisi();
 
-    public int hashCode(){
-        
-    }
+    @Override
+    public abstract int hashCode();
 }
