@@ -30,19 +30,22 @@ public class Imenik {
         int vrijednost=1;
         String ispis=new String();
         for(Map.Entry<String,TelefonskiBroj> map : mapa.entrySet()) {
-            ispis += vrijednost + ". " + map.getKey() + " - " + map.getValue();
-            System.out.println(ispis);
-            vrijednost++;
+            if(s == map.getKey().charAt(0)) {
+                ispis += vrijednost + ". " + map.getKey() + " - " + map.getValue().ispisi();
+                vrijednost++;
+            }
         }
-        return "";
+        return ispis;
     }
 
     Set<String> izGrada(FiksniBroj.Grad g){
-
+        HashSet<String> s = new HashSet<>();
+        return s;
     }
 
     Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
-
+        HashSet<TelefonskiBroj> s = new HashSet<>();
+        return s;
     }
 
     @Override
