@@ -14,6 +14,6 @@ public abstract class TelefonskiBroj implements Comparable<TelefonskiBroj> {
 
     @Override
     public int compareTo(TelefonskiBroj o) {
-        return 0;
+        return this.ispisi().compareTo(o.ispisi());
     }
 }

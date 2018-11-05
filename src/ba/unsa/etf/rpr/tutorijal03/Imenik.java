@@ -39,13 +39,33 @@ public class Imenik {
     }
 
     Set<String> izGrada(FiksniBroj.Grad g){
-        HashSet<String> s = new HashSet<>();
-        return s;
+        Set<String> skup = new TreeSet<>();
+        for (Map.Entry<String, TelefonskiBroj> e : mapa.entrySet()) {
+            TelefonskiBroj broj = e.getValue();
+            if (broj instanceof FiksniBroj) {
+                FiksniBroj broj2 = (FiksniBroj) broj;
+                if (broj2.getPozivniGrada().equals(broj2.getPozivniTrazenogGrada(g))) {
+                    skup.add(e.getKey());
+                }
+            }
+        }
+        List<String> lista = new ArrayList<>(skup);
+        Collections.sort(lista);
+        return skup;
     }
 
     Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
-        HashSet<TelefonskiBroj> s = new HashSet<>();
-        return s;
+        Set<TelefonskiBroj> skup = new TreeSet<>();
+        for (Map.Entry<String, TelefonskiBroj> e : mapa.entrySet()) {
+            TelefonskiBroj broj = e.getValue();
+            if (broj instanceof FiksniBroj) {
+                FiksniBroj broj2 = (FiksniBroj) broj;
+                if (broj2.getPozivniGrada().equals(broj2.getPozivniTrazenogGrada(g))) {
+                    skup.add(e.getValue());
+                }
+            }
+        }
+        return skup;
     }
 
     @Override
