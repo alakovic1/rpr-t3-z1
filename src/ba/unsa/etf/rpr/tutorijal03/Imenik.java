@@ -6,15 +6,15 @@ public class Imenik {
 
     private HashMap<String, TelefonskiBroj> mapa=new HashMap<String, TelefonskiBroj>();
 
-    public void dodaj(String ime, TelefonskiBroj broj){
+    public final void dodaj(String ime, TelefonskiBroj broj){
         mapa.put(ime,broj);
     }
 
-    public String dajBroj(String ime){
+    public final String dajBroj(String ime){
         return mapa.get(ime).ispisi();
     }
 
-    public String dajIme(TelefonskiBroj broj){
+    public final String dajIme(TelefonskiBroj broj){
         Set set=mapa.entrySet();
         Iterator iterator=set.iterator();
         while(iterator.hasNext()){
@@ -26,9 +26,9 @@ public class Imenik {
         return "";
     }
 
-    public String naSlovo(char s){
+    public final String naSlovo(char s){
         int vrijednost=1;
-        String ispis=new String();
+        String ispis="";
         for(Map.Entry<String,TelefonskiBroj> map : mapa.entrySet()) {
             if(s == map.getKey().charAt(0)) {
                 ispis += vrijednost + ". " + map.getKey() + " - " + map.getValue().ispisi();
@@ -38,7 +38,7 @@ public class Imenik {
         return ispis;
     }
 
-    Set<String> izGrada(FiksniBroj.Grad g){
+    public final Set<String> izGrada(FiksniBroj.Grad g){
         Set<String> skup = new TreeSet<>();
         for (Map.Entry<String, TelefonskiBroj> e : mapa.entrySet()) {
             TelefonskiBroj broj = e.getValue();
@@ -54,7 +54,7 @@ public class Imenik {
         return skup;
     }
 
-    Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
+    public final Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
         Set<TelefonskiBroj> skup = new TreeSet<>();
         for (Map.Entry<String, TelefonskiBroj> e : mapa.entrySet()) {
             TelefonskiBroj broj = e.getValue();
@@ -66,11 +66,6 @@ public class Imenik {
             }
         }
         return skup;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
     }
     
 }

@@ -14,22 +14,22 @@ public class FiksniBroj extends TelefonskiBroj {
         nekiBroj=broj;
     }
 
-    public String getPozivniGrada () {
+    public final String getPozivniGrada () {
         return pozivni[nekiGrad.ordinal()];
     }
 
-    public String getPozivniTrazenogGrada (Grad g) {
+    public final String getPozivniTrazenogGrada (Grad g) {
         return pozivni[g.ordinal()];
     }
 
     @Override
-    public String ispisi () {
+    public final String ispisi () {
         return pozivni[nekiGrad.ordinal()] + "/" + nekiBroj;
     }
 
 
     @Override
-    public int hashCode(){
+    public final int hashCode(){
         return nekiBroj.hashCode();
     }
 }

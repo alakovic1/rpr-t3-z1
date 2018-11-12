@@ -11,14 +11,14 @@ public class MedunarodniBroj extends TelefonskiBroj {
     }
 
     @Override
-    public String ispisi(){
-        String ispis=new String();
+    public final String ispisi(){
+        String ispis="";
         ispis+=mDrzava+mBroj;
         return ispis;
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return mDrzava.hashCode()+mBroj.hashCode();
     }
 

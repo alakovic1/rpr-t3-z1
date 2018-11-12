@@ -8,12 +8,12 @@ public abstract class TelefonskiBroj implements Comparable<TelefonskiBroj> {
     public abstract int hashCode();
 
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         return super.equals(obj);
     }
 
     @Override
-    public int compareTo(TelefonskiBroj o) {
+    public final int compareTo(TelefonskiBroj o) {
         return this.ispisi().compareTo(o.ispisi());
     }
 }

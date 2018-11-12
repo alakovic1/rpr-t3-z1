@@ -11,14 +11,14 @@ public class MobilniBroj extends TelefonskiBroj {
     }
 
     @Override
-    public String ispisi(){
-        String ispis=new String();
+    public final String ispisi(){
+        String ispis="";
         ispis+="0"+mobMreza+"/"+mobBroj;
         return ispis;
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return mobBroj.hashCode()+mobMreza;
     }
 
